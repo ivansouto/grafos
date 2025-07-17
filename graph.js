@@ -37,10 +37,11 @@ function renderGraph(data) {
       {
         selector: 'edge',
         style: {
-          'width': 3,
-          'line-color': '#aaa',
-          'target-arrow-color': '#aaa',
-          'target-arrow-shape': 'triangle'
+           'width': 3,
+      'line-color': '#aaa',
+      'target-arrow-color': '#aaa',
+      'target-arrow-shape': 'triangle',
+      'curve-style': 'bezier'
         }
       }
     ],
