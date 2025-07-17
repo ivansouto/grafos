@@ -3,11 +3,25 @@ let cy;
 // Grafo inicial
 const initialData = {
   "nodes": [
-    { "data": { "id": "a", "label": "Nó A", "descricao": "Texto 1" } },
-    { "data": { "id": "b", "label": "Nó B", "descricao": "Texto 2" } }
+    { "data": { "id": "a", "label": "Nó A", "descricao": "Texto do nó A" } },
+    { "data": { "id": "b", "label": "Nó B", "descricao": "Texto do nó B" } },
+    { "data": { "id": "c", "label": "Nó C", "descricao": "Texto do nó C" } },
+    { "data": { "id": "d", "label": "Nó D", "descricao": "Texto do nó D" } },
+    { "data": { "id": "e", "label": "Nó E", "descricao": "Texto do nó E" } },
+    { "data": { "id": "f", "label": "Nó F", "descricao": "Texto do nó F" } },
+    { "data": { "id": "g", "label": "Nó G", "descricao": "Texto do nó G" } }
   ],
   "edges": [
-    { "data": { "source": "a", "target": "b" } }
+    { "data": { "source": "a", "target": "b" } },
+    { "data": { "source": "a", "target": "c" } },
+    { "data": { "source": "b", "target": "d" } },
+    { "data": { "source": "c", "target": "d" } },
+    { "data": { "source": "d", "target": "e" } },
+    { "data": { "source": "e", "target": "f" } },
+    { "data": { "source": "f", "target": "g" } },
+    { "data": { "source": "g", "target": "c" } }, 
+    { "data": { "source": "b", "target": "f" } },
+    { "data": { "source": "c", "target": "g" } }
   ]
 };
 
