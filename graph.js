@@ -2,14 +2,12 @@ let cy;
 
 // Grafo inicial
 const initialData = {
-  nodes: [
-    { data: { id: "a" } },
-    { data: { id: "b" } },
-    { data: { id: "c" } }
+  "nodes": [
+    { "data": { "id": "a", "label": "Nó A", "descricao": "Texto 1" } },
+    { "data": { "id": "b", "label": "Nó B", "descricao": "Texto 2" } }
   ],
-  edges: [
-    { data: { source: "a", target: "b" } },
-    { data: { source: "b", target: "c" } }
+  "edges": [
+    { "data": { "source": "a", "target": "b" } }
   ]
 };
 
@@ -50,6 +48,7 @@ function renderGraph(data) {
       animate: true
     }
   });
+  updateLegendFromGraph();
 }
 
 // Atualiza o grafo com base no texto JSON
@@ -61,6 +60,20 @@ function updateGraph() {
   } catch (e) {
     alert("Erro ao interpretar JSON: " + e.message);
   }
+}
+
+function updateLegendFromGraph() {
+  const list = document.getElementById("legendList");
+  list.innerHTML = ''; // Limpa legenda atual
+
+  const currentNodes = cy.nodes();
+
+  currentNodes.forEach(node => {
+    const data = node.data();
+    const item = document.createElement('li');
+    item.innerHTML = `<strong>${data.label || data.id}:</strong> ${data.descricao || '(sem descrição)'}`;
+    list.appendChild(item);
+  });
 }
 
 // Extrai o grafo atual da visualização e escreve no textarea
